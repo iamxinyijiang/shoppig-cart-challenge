@@ -11,8 +11,8 @@ https://iamxinyijiang.github.io/shoppig-cart-challenge/
 - Vanilla Javascript
 - A tiny bit of Bootstrap
 
-##Requirements met
-- #### minimum requirements:
+## Requirements met
+- ### minimum requirements:
 1. Have a pre-populated (hard coded) array of objects as products. (check)
 
 2. Your product display should have (not limited to) product image, product name, product price. (check)
@@ -23,7 +23,7 @@ https://iamxinyijiang.github.io/shoppig-cart-challenge/
 
 5. The shopping cart lists all products and displays a the total price. (check)
 
-- #### Stretch Goals:
+- ### Stretch Goals:
 6. The user should also be able to delete the products from the cart, thus modifying the total price of the cart. (check)
 
 7. The user should be able to enter a quantity for each product. (check)
