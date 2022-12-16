@@ -1,0 +1,69 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+    min-width: 375px;
+    width: 100%;
+    margin: 0;
+}
+
+.row,
+.col {
+    display: flex;
+}
+
+#main-row {
+ height: 100vh;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+}
+
+#merchandise-container,
+#cart-container {
+    flex-wrap: wrap;
+    background-color: aliceblue;
+
+}
+
+#cart-container {
+    overflow: scroll;
+
+}
+
+td {
+    min-width: 10%;
+
+}
+
+
+.merchandise {
+    min-height: 5rem;
+    min-width: 3rem;
+}
+
+.product-img {
+    width: inherit;
+    height: inherit;
+
+}
