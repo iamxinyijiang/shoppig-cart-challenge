@@ -34,7 +34,7 @@ https://iamxinyijiang.github.io/shoppig-cart-challenge/
 - I don not fully understand how parseFloat() rounds decimals up but don't want to just stick to integer prices.
 
 ## Additional Features that can be added in the future
-- -Persisting data in localstorage so users don't lose their cart if page reloads.
+- Persisting data in localstorage so users don't lose their cart if page reloads.
 
 - Let users edit quantity in cart instead of having to delete item and re-add.
 
