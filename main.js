@@ -118,16 +118,17 @@ for (let i = 0, length = addButtons.length; i < length; i++) {
         <td>$<span id="subtotal-price-${products[i].sku}">${itemSubtotalPrice[i]}</span></td>
         <td><button class="btn btn-border-light" id="del-btn-${products[i].sku}" >&#9940;</button></td>
         </tr>`
-        //calculate cart total
-        let cartTotal = 0
-        cartTotal += itemSubtotalPrice[i]
-        document.getElementById("cart-total").innerHTML = parseFloat(document.getElementById("cart-total").innerHTML) + cartTotal
+
         //avoid duplicate item entry in cart
         if (document.getElementById(`UID${products[i].sku}`) !== null) {
             alert(`${products[i].name} is already in your cart.`)
         }
         else {
             document.getElementById("table-body").innerHTML = document.getElementById("table-body").innerHTML + cartHTML
+            //calculate cart total
+            let cartTotal = 0
+            cartTotal += itemSubtotalPrice[i]
+            document.getElementById("cart-total").innerHTML = parseFloat(document.getElementById("cart-total").innerHTML) + cartTotal
             deleteItem(products)
         }
     });
