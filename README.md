@@ -1,4 +1,4 @@
-# shoppig-cart-challenge
+                                                   # shoppig-cart-challenge for GA JWD 
 
 ---------Setup instructions-------
 
@@ -6,6 +6,7 @@ This shopping cart page is deployed via GitHub Pages.
 
 
 Please click this link to visit and test it out!
+https://iamxinyijiang.github.io/shoppig-cart-challenge/
 
 
 
