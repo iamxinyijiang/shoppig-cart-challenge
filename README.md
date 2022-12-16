@@ -13,20 +13,20 @@ https://iamxinyijiang.github.io/shoppig-cart-challenge/
 
 ## Requirements met
 - ### minimum requirements:
-1. Have a pre-populated (hard coded) array of objects as products. (check)
+1. Have a pre-populated (hard coded) array of objects as products. (&radic;)
 
-2. Your product display should have (not limited to) product image, product name, product price. (check)
+2. Your product display should have (not limited to) product image, product name, product price. (&radic;)
 
-3. All products should be displayed when the page loads. (check)
+3. All products should be displayed when the page loads. (&radic;)
 
-4. Using an ‘add to cart’ button, the user should be able to add the products to a shopping cart list. (check)
+4. Using an ‘add to cart’ button, the user should be able to add the products to a shopping cart list. (&radic;)
 
-5. The shopping cart lists all products and displays a the total price. (check)
+5. The shopping cart lists all products and displays a the total price. (&radic;)
 
 - ### Stretch Goals:
-6. The user should also be able to delete the products from the cart, thus modifying the total price of the cart. (check)
+6. The user should also be able to delete the products from the cart, thus modifying the total price of the cart. (&radic;)
 
-7. The user should be able to enter a quantity for each product. (check)
+7. The user should be able to enter a quantity for each product. (&radic;)
 
 ## Issues
 - Issues are mainly with stretch goals.
@@ -41,3 +41,7 @@ https://iamxinyijiang.github.io/shoppig-cart-challenge/
 - A separate inventory management js file.
 
 - Rewrite as a React app.
+
+## Thank you!
+I am not sure if this is production quality code yet but still feel proud about it. 
+I wrote my first line of code at Genreation Australia and would like to thank everyone at GA for helping me coming this far.
