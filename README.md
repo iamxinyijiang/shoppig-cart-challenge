@@ -44,4 +44,4 @@ https://iamxinyijiang.github.io/shopping-cart-challenge/
 
 ## Thank you!
 I am not sure if this is production quality code yet but still feel proud about it. 
-I wrote my first line of code at Genreation Australia and would like to thank everyone at GA for helping me coming this far.
+I wrote my first line of code at Generation Australia and would like to thank everyone at GA for helping me coming this far.
