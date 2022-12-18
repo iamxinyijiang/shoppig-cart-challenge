@@ -36,7 +36,7 @@ https://iamxinyijiang.github.io/shopping-cart-challenge/
 ## Additional Features that can be added in the future
 - Persisting data in localstorage so users don't lose their cart if page reloads.
 
-- Let users edit quantity in cart instead of having to delete item and re-add.
+- Let users edit quantity in cart instead of having to delete item and re-add. (update: edit quantity in cart feature has been added)
 
 - A separate inventory management js file.
 
