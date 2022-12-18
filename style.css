@@ -67,3 +67,9 @@ td {
     height: inherit;
 
 }
+.cart-img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

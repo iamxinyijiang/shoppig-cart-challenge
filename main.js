@@ -112,7 +112,8 @@ for (let i = 0, length = addButtons.length; i < length; i++) {
         itemSubtotalPrice[i] = products[i].price * quantity
         let cartHTML =
             `<tr id="UID${products[i].sku}">
-        <th scope="row">${products[i].name}</th>
+        <th scope="row" class="cart-img" style="background-image: url(${products[i].img});"></th>
+        <td>${products[i].name}</td>
         <td>
         <label for="quantity-adjust-${products[i].sku}"></label>
         <input id="quantity-adjust-${products[i].sku}" type="number" class="adjust" name="quantity-adjust-${products[i].sku}" min="1" max="99" value="${quantity}">
