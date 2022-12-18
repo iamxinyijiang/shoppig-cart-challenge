@@ -128,7 +128,6 @@ for (let i = 0, length = addButtons.length; i < length; i++) {
         }
         else {
             document.getElementById("table-body").innerHTML = document.getElementById("table-body").innerHTML + cartHTML
-            adjustAndDeleteItem(products)
             //calculate cart total
             let cartTotal = 0
             cartTotal += itemSubtotalPrice[i]
