@@ -3,7 +3,7 @@ let products =
     [
 
         {
-            "sku": 1,
+            "sku": "p1",
 
             "name": "Ben & Jerry's Half Baked Ice Cream 458ml",
 
@@ -16,7 +16,7 @@ let products =
 
 
         {
-            "sku": 2,
+            "sku": "p2",
 
             "name": "Griffins Marvels Golden Gaytime Popcorn 100g",
 
@@ -29,7 +29,7 @@ let products =
 
 
         {
-            "sku": 3,
+            "sku": "p3",
 
             "name": "Maltesers Milk Chocolate Snack 140g",
 
@@ -42,7 +42,7 @@ let products =
 
 
         {
-            "sku": 4,
+            "sku": "p4",
 
             "name": "Cheetos Flaming Hot Puffs Snack 150g",
 
@@ -55,7 +55,7 @@ let products =
 
 
         {
-            "sku": 5,
+            "sku": "p5",
 
             "name": "Coca-cola No Sugar Soft Drink Bottle 600ml",
 
@@ -68,7 +68,7 @@ let products =
 
 
         {
-            "sku": 6,
+            "sku": "p6",
 
             "name": "Mount Franklin Spring Water Bottle 600ml",
 
@@ -92,7 +92,7 @@ function createTaskHTML(products) {
         <p class="product-name">${products[i].name}</p>
         <p class="product-price">Price: $${products[i].price} each</p>
         <label for="quantity-${products[i].sku}">Quantity:</label>
-        <input id="quantity-${products[i].sku}" type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+        <input id="quantity-${products[i].sku}" type="number" class="quantity" name="quantity-${products[i].sku}" min="1" max="99" value="1">
         <button class="add-btn"id="btn-${products[i].sku}">Add to cart</button>
         </div>
         <div/>
@@ -113,9 +113,12 @@ for (let i = 0, length = addButtons.length; i < length; i++) {
         let cartHTML =
             `<tr id="UID${products[i].sku}">
         <th scope="row">${products[i].name}</th>
-        <td>${quantity}</td>
+        <td>
+        <label for="quantity-adjust-${products[i].sku}"></label>
+        <input id="quantity-adjust-${products[i].sku}" type="number" class="adjust" name="quantity-adjust-${products[i].sku}" min="1" max="99" value="${quantity}">
+        </td>
         <td>$${products[i].price}</td>
-        <td>$<span id="subtotal-price-${products[i].sku}">${itemSubtotalPrice[i]}</span></td>
+        <td>$<span id="subtotal-price-${products[i].sku}" class="subtotal">${itemSubtotalPrice[i]}</span></td>
         <td><button class="btn btn-border-light" id="del-btn-${products[i].sku}" >&#9940;</button></td>
         </tr>`
 
@@ -125,25 +128,46 @@ for (let i = 0, length = addButtons.length; i < length; i++) {
         }
         else {
             document.getElementById("table-body").innerHTML = document.getElementById("table-body").innerHTML + cartHTML
+            adjustAndDeleteItem(products)
             //calculate cart total
             let cartTotal = 0
             cartTotal += itemSubtotalPrice[i]
             document.getElementById("cart-total").innerHTML = parseFloat(document.getElementById("cart-total").innerHTML) + cartTotal
-            deleteItem(products)
+            adjustAndDeleteItem(products)
         }
     });
-
 }
 
-//delete item from cart
-function deleteItem(products) {
+//delete item from cart/adjust quantity in cart
+function adjustAndDeleteItem(products) {
     for (let i = 0, length = products.length; i < length; i++) {
         if (document.getElementById(`del-btn-${products[i].sku}`) !== null) {
             document.getElementById(`del-btn-${products[i].sku}`).addEventListener("click", () => {
                 let element = document.getElementById(`UID${products[i].sku}`)
-                //adjust cart total
+                //adjust cart total price after deletion
                 document.getElementById("cart-total").innerHTML = parseFloat(document.getElementById("cart-total").innerHTML) - parseFloat(document.getElementById(`subtotal-price-${products[i].sku}`).innerHTML)
+                //remove element
                 element.parentNode.removeChild(element)
+            })
+        }
+        //listen to change in quantity in cart
+        if (document.getElementById(`quantity-adjust-${products[i].sku}`) !== null) {
+            document.getElementById(`quantity-adjust-${products[i].sku}`).addEventListener('change', () => {
+                //calculate new subtotal
+                let newSubTotal = parseFloat(document.getElementById(`quantity-adjust-${products[i].sku}`).value) * products[i].price
+                document.getElementById(`subtotal-price-${products[i].sku}`).innerHTML = newSubTotal
+                //calculate new cart total
+                const sum = [];
+                for (let i = 0, length = products.length; i < length; i++) {
+                    const innerSum = Array.from(
+                        document.getElementsByClassName(`subtotal`)
+                    ).reduce(
+                        (acc, el) => acc + parseFloat(el.innerText),
+                        0
+                    );
+                    sum.push(innerSum);
+                    document.getElementById("cart-total").innerHTML = sum[0]
+                }
             })
         }
     }
